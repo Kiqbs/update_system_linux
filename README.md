@@ -36,21 +36,25 @@ The script also uses color-coded output in the terminal to make it easier to tra
 How to Use
 
 To use the script, follow the steps below:
-______________________________________________________________________________________________________________________________
-    1. Clone the repository (or download the script):
 
+   1. Clone the repository (or download the script):
+______________________________________________________________________________________________________________________________
     git clone https://[URL_OF_YOUR_REPOSITORY].git
-    cd [NAME_OF_YOUR_REPOSITORY
+    cd [NAME_OF_YOUR_REPOSITORY]
 ______________________________________________________________________________________________________________________________
-    2. Make the script executable:
-    You need to grant execute permissions to the file for the system to allow it to run.
 
+   2. Make the script executable:
+      You need to grant execute permissions to the file for the system to allow it to run.  
+______________________________________________________________________________________________________________________________
     chmod +x atualizar-sistema.sh
-______________________________________________________________________________________________________________________________    3. Run the script:
+______________________________________________________________________________________________________________________________    
+
+3. Run the script:
+______________________________________________________________________________________________________________________________
     ./update-system.sh    
 ______________________________________________________________________________________________________________________________
 
-        Note: The script uses sudo for APT and Snap commands, so you will be prompted to enter your administrator password in the terminal.
+Note: The script uses sudo for APT and Snap commands, so you will be prompted to enter your administrator password in the terminal.
 
 Prerequisites
 
