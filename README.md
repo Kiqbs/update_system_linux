@@ -5,48 +5,52 @@ This repository contains a simple Bash script (atualizar-sistema.sh) to automate
 
 The goal is to provide a single command to keep the main system, Snap packages, and Flatpak applications always up-to-date.
 
-Features
+
+Features:
 
 The script performs the following tasks in sequence:
 
-    System Update (APT):
+System Update (APT):
 
-        apt update: Synchronizes the package list from the repositories.
+   apt update: Synchronizes the package list from the repositories.
 
-        apt full-upgrade: Upgrades all installed packages to their newest versions, intelligently handling dependencies.
+   apt full-upgrade: Upgrades all installed packages to their newest versions, intelligently handling dependencies.
 
-        apt autoremove: Removes packages and dependencies that are no longer required by the system.
+   apt autoremove: Removes packages and dependencies that are no longer required by the system.
 
-        apt autoclean: Clears the local cache of downloaded package files, removing outdated versions.
+   apt autoclean: Clears the local cache of downloaded package files, removing outdated versions.
 
-    Snap Package Updates:
+Snap Package Updates:
 
-        Checks if snapd is installed on the system.
+   Checks if snapd is installed on the system.
 
-        If present, it runs the snap refresh command to update all installed Snap packages.
+   If present, it runs the snap refresh command to update all installed Snap packages.
 
-    Flatpak Application Updates:
+Flatpak Application Updates:
 
-        Checks if flatpak is installed.
+   Checks if flatpak is installed.
 
-        If present, it runs flatpak update to update all Flatpak applications and runtimes.
+   If present, it runs flatpak update to update all Flatpak applications and runtimes.
+
 
 The script also uses color-coded output in the terminal to make it easier to track the progress of each stage.
 
-How to Use
+
+
+How to Use:
 
 To use the script, follow the steps below:
 
    1. Clone the repository (or download the script):
 ______________________________________________________________________________________________________________________________
-    git clone https://[URL_OF_YOUR_REPOSITORY].git
-    cd [NAME_OF_YOUR_REPOSITORY]
+    git clone https://github.com/Kiqbs/update_system_linux.git
+    cd update_system_linux
 ______________________________________________________________________________________________________________________________
 
    2. Make the script executable:
       You need to grant execute permissions to the file for the system to allow it to run.  
 ______________________________________________________________________________________________________________________________
-    chmod +x atualizar-sistema.sh
+    chmod +x update_system.sh
 ______________________________________________________________________________________________________________________________    
 
 3. Run the script:
@@ -58,8 +62,8 @@ Note: The script uses sudo for APT and Snap commands, so you will be prompted to
 
 Prerequisites
 
-    An Ubuntu/Debian-based operating system.
+   1.An Ubuntu/Debian-based operating system.
 
-    Terminal access.
+   2.Terminal access.
 
-    Sudo (superuser) privileges.
+   3.Sudo (superuser) privileges.
