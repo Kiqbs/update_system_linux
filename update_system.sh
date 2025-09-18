@@ -1,48 +1,36 @@
 #!/bin/bash
 
-# --- SCRIPT DE ATUALIZAÇÃO COMPLETA PARA BASEADOS EM UBUNTU ---
+GREEN='\033[0;32m'
+NC='\033[0m' 
 
-# Define cores para a saída do terminal para melhor visualização
-VERDE='\033[0;32m'
-NC='\033[0m' # Sem Cor
+echo -e "${GREEN}=== STARTING SYSTEM UPDATE (APT) ===${NC}"
 
-echo -e "${VERDE}=== INICIANDO ATUALIZAÇÃO DO SISTEMA (APT) ===${NC}"
-# Atualiza a lista de pacotes
 sudo apt update
-
-# Atualiza todos os pacotes instalados de forma inteligente
 sudo apt full-upgrade -y
-
-# Remove pacotes que não são mais necessários
 sudo apt autoremove -y
-
-# Limpa o cache de pacotes baixados
 sudo apt autoclean
+echo -e "\n${GREEN}=== APT UPDATE COMPLETED ===${NC}"
 
-echo -e "\n${VERDE}=== ATUALIZAÇÃO APT CONCLUÍDA ===${NC}"
 
-
-# Verifica se o Snap está instalado antes de tentar atualizar
 if command -v snap &> /dev/null
 then
-    echo -e "\n${VERDE}=== INICIANDO ATUALIZAÇÃO DOS PACOTES SNAP ===${NC}"
+    echo -e "\n${GREEN}=== STARTING UPDATING SNAP PACKAGES ===${NC}"
     sudo snap refresh
-    echo -e "\n${VERDE}=== ATUALIZAÇÃO SNAP CONCLUÍDA ===${NC}"
+    echo -e "\n${GREEN}=== SNAP UPDATE COMPLETE ===${NC}"
 else
-    echo -e "\nO sistema Snap não foi encontrado. Pulando."
+    echo -e "\nSnap system not found. Skipping."
 fi
 
 
-# Verifica se o Flatpak está instalado antes de tentar atualizar
 if command -v flatpak &> /dev/null
 then
-    echo -e "\n${VERDE}=== INICIANDO ATUALIZAÇÃO DOS PACOTES FLATPAK ===${NC}"
+    echo -e "\n${GREEN}=== STARTING FLATPAK PACKAGE UPDATES ===${NC}"
     flatpak update -y
-    echo -e "\n${VERDE}=== ATUALIZAÇÃO FLATPAK CONCLUÍDA ===${NC}"
+    echo -e "\n${GREEN}=== FLATPAK UPDATE COMPLETE ===${NC}"
 else
-    echo -e "\nO sistema Flatpak não foi encontrado. Pulando."
+    echo -e "\nFlatpak system not found. Skipping."
 fi
 
-echo -e "\n${VERDE}############################################${NC}"
-echo -e "${VERDE}#      ATUALIZAÇÃO COMPLETA FINALIZADA     #${NC}"
-echo -e "${VERDE}############################################${NC}"
+echo -e "\n${GREEN}############################################${NC}"
+echo -e "${GREEN}#            FULL UPDATE COMPLETED           #${NC}"
+echo -e "${GREEN}############################################${NC}"
